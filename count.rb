@@ -14,7 +14,7 @@ But bears it out even to the edge of doom.
   I never writ, nor no man ever loved."
 
 uniques = {}
-words = sonnet.scan(/\w+/)
+words = sonnet.scan(/[\w']+/)
 
 words.each do |word|
   if uniques[word]
