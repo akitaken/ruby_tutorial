@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'craff_palindrome'
+require 'FileUtils'
+
+palindromes = File.readlines("phrases.txt").select(&:palindrome?)
+palindromes.each { |palindrome| puts "palindrome detected: #{palindrome}" }
+
+if File.exists?("palindromes_file.txt")
+  FileUtils.rm("palindromes_file.txt")
+end
+
+File.write('palindromes_file.txt', palindromes.join)
